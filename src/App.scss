@@ -1,0 +1,209 @@
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+$roboto: 'Montserrat';
+$cursive_font: 'Montserrat';
+$round: 'Montserrat';
+$cta: #fe8033;
+$bg: #2D1B0B;
+$light_bg: #726150;
+$text: #F7D9B4;
+$white: #fff;
+
+body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  font-family: $round;
+  background-color: $bg;
+}
+
+.dFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  //padding: 30px 50px 20px 50px;
+  box-sizing: border-box;
+  background-color: $bg;
+}
+
+nav {
+  background-color: rgba($color:black, $alpha: .2);
+  padding: 30px;
+
+  @extend .dFlex;
+  justify-content: space-around;
+  width: 100%;
+  color: $white;
+  .logo {
+    font-size: 30px;
+    text-transform: uppercase;
+    color: rgba($white, .7);
+  }
+  ul {
+    @extend .dFlex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    li{
+      font-size: 20px;
+      margin-left: 30px;
+      padding: 20px;
+      box-sizing: border-box;
+      color: rgba($white, .7);
+      cursor: pointer;
+      transition: all .3s ease-in-out;
+    }
+ 
+
+  }
+  ul{
+    li:hover{
+      color: white;
+      
+    }
+  }
+  .search {
+    margin-left: 20px;
+    color: rgba($white, .7);
+    .fa {
+      cursor: pointer;
+      +.fa{
+        margin-left: 30px;
+      }
+    }
+  }
+}
+
+.main_content {
+  @extend .dFlex;
+  position: relative;
+  width: 70%;
+  margin: 50px auto;
+  padding: 100px 0 0;
+  box-sizing: border-box;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  h3{
+    position: absolute;
+    left: -300px;
+    top: 0;
+    color: rgba($text, .001); 
+    font-size: 10vw;
+  }
+  .card{
+    border: solid 1px rgba($white, .2);
+    width: 30%;
+    border-radius: 15px;
+    // background-color: $bg;
+    @extend .dFlex;
+    flex-direction: column;
+    position: relative;
+    //transform: scale(.95);
+    transition: all .3s ease-in-out;
+    margin-bottom: 80px;
+    margin-top: 30px;
+    min-width: 300px;
+    .card_img{
+      margin-top: -5vw;
+
+      img{
+        width: 300px;
+      }
+    }
+    .card_header {
+      @extend .dFlex;
+      flex-direction: column;
+      color: $white;
+      margin: 25px 0;
+      h2{
+        font-size: 18px;
+        color: rgba($text, .7);
+
+      }
+      p{
+        font-size: 14px;
+        text-align: center;
+        color: rgba($text, .7);
+        margin: 8px;
+      }
+      .price {
+        font-size: 25px;
+        color: $cta;
+        span{
+          font-size: 15px;
+          display: inline-block;
+          vertical-align: top;
+        }
+      }
+    }
+  }
+  .card:hover {
+    background-color: rgba($light_bg, .1);
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  .card:hover {
+    .btn{
+    background-color: rgba($cta, .5);
+    color: $white;
+
+  }
+  }
+}
+.btn{
+  width: 130px;
+  height: 35px;
+  font-size: 14px;
+  border-radius: 35px;
+  @extend .dFlex; 
+  cursor: pointer;
+  position: relative; 
+  transition:background-color 0.9s ease;
+  overflow: hidden;
+  background-color: rgba($cta, .2);
+
+}
+
+.footer{
+  @extend .dFlex;
+  background-color: rgba($color:black, $alpha: .2);
+  padding: 30px;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: auto;
+  color: rgba($white, .2);
+  font-size: 12px;
+  .social{
+    @extend .dFlex;
+    .fab {
+    
+      width: 50px;
+      height: 50px;
+      border-radius: 50px;
+      border: 1px solid rgba($white, .7);
+      @extend .dFlex;
+      font-size: 14px;
+      color:rgba($text, .3);
+      cursor: pointer;
+      +.fab {
+        margin-left: 15px;
+      }
+    }
+    .fab:hover{
+      transform: scale(1.03);
+      transition: all .3s ease-in-out;
+    }
+  }
+
+}
